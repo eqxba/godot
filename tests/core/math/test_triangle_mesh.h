@@ -70,7 +70,7 @@ TEST_CASE("[SceneTree][TriangleMesh] BVH creation and intersection") {
 		Vector3 normal;
 		int32_t *surf_index = nullptr;
 		int32_t face_index = -1;
-		const bool has_result = triangle_mesh->intersect_ray(begin, dir, point, normal, surf_index, &face_index);
+		const bool has_result = triangle_mesh->intersect_ray(begin, dir, point, normal, surf_index, 0.0, &face_index);
 		CHECK(has_result);
 		CHECK(point.is_equal_approx(Vector3(0.0, 0.5, 0.0)));
 		CHECK(normal.is_equal_approx(Vector3(0.0, 1.0, 0.0)));
